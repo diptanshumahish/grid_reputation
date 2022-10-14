@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+    <small style="font-family:cursive ; color: royalblue">Fields marked with * are mandatory fields.</small>
+    <form action="" style="font-family:cursive ; color: royalblue" method="POST">
+        {{forms|crispy}}
+        {% csrf_token %}
+        <input type="submit" value="Book Now">
+    </form>
+{% endblock  %}

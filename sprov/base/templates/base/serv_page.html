@@ -1,0 +1,44 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <style>
+        .service-details{
+            display: grid;
+            grid-template-columns: 7fr 1fr;
+        }
+        .pack{
+            display: grid;
+            grid-template-rows: 1fr 1fr 3fr 1fr;
+        }
+    </style>
+    <div class="service-details">
+        <div>
+            {{service.description}}
+        </div>
+        {% if package != None %}
+            <ul class="pack">
+                <div>
+                    {{package.pack1}}
+                    {{package.price1}}
+                </div>
+
+                <div>
+                    {{package.pack2}}
+                    {{package.price2}}
+                </div>
+
+
+                <div>
+                    {{package.pack3}}
+                    {{package.price3}}
+                </div>
+        {% endif %}
+                <div>
+                    <a href="{% url 'book' %}?t=book&q={{service.serv_name}}">Book Now</a>
+                </div>
+
+            </ul>
+
+    </div>
+
+{% endblock  %}

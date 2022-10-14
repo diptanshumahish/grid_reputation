@@ -1,0 +1,32 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <div><p style="font-family:'Courier New'">#120Welcome to the website...
+        Life is a quality that distinguishes
+        matter that has biological processes, such as signaling and
+         self-sustaining processes, from that which does not, and
+         is defined by the capacity for growth, reaction to stimuli,
+          metabolism, energy transformation, and reproduction
+          Life is a quality that distinguishes
+          matter that has biological processes, such as signaling and
+           self-sustaining processes, from that which does not, and
+           is defined by the capacity for growth, reaction to stimuli,
+            metabolism, energy transformation, and reproduction
+            Life is a quality that distinguishes
+            matter that has biological processes, such as signaling and
+             self-sustaining processes, from that which does not, and
+             is defined by the capacity for growth, reaction to stimuli,
+              metabolism, energy transformation, and reproduction</p>
+    </div>
+    <style>
+        .service{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    </style>
+    <div class="service">
+        {% for serv in service %}
+            <li><a href="{% url 'service' serv.id %}">{{serv.serv_name}}</a></li>
+        {% endfor %}
+    </div>
+{% endblock  %}
